@@ -4,7 +4,7 @@ terraform {
     organization = "seanpsmithio"
 
     workspaces {
-      name = "global-vpc"
+      name = "dev-vpc"
     }
   }
 }
