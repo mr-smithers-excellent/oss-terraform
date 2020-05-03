@@ -54,5 +54,5 @@ module "dev_openvpn" {
   key_prefix         = "sps"
   subnet_id          = data.terraform_remote_state.vpc.outputs.public_subnet_ids[0]
   vpc_id             = data.terraform_remote_state.vpc.outputs.vpc_id
-  cloudflare_zone_id = ""
+  cloudflare_zone_id = local.cloudflare_zone_id
 }
