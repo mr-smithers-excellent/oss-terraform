@@ -15,6 +15,6 @@ provider "aws" {
 }
 
 module "dev_vpc" {
-  source      = "./../../modules/vpc"
+  source      = "./../../../modules/vpc"
   environment = "dev"
 }
