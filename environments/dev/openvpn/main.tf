@@ -18,16 +18,16 @@ provider "aws" {
 # Optional Cloudflare DNS Entry #
 #################################
 
-data "cloudflare_zones" "selected" {
-  filter {
-    name   = "seanpsmith.io"
-    status = "active"
-  }
-}
-
-locals {
-  cloudflare_zone_id = lookup(data.cloudflare_zones.selected.zones[0], "id")
-}
+//data "cloudflare_zones" "selected" {
+//  filter {
+//    name   = "seanpsmith.io"
+//    status = "active"
+//  }
+//}
+//
+//locals {
+//  cloudflare_zone_id = lookup(data.cloudflare_zones.selected.zones[0], "id")
+//}
 
 ################
 # Retrieve VPC #
