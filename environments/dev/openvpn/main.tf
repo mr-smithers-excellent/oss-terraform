@@ -4,9 +4,14 @@ terraform {
     organization = "seanpsmithio"
 
     workspaces {
-      name = "global-openvpn"
+      name = "dev-openvpn"
     }
   }
+}
+
+provider "aws" {
+  region  = "us-west-2"
+  profile = "seanpsmithio-terraform"
 }
 
 #################################
@@ -32,15 +37,15 @@ data "terraform_remote_state" "vpc" {
   backend = "remote"
 
   config = {
-    organization = "seanpsmith90"
+    organization = "seanpsmithio"
     workspaces = {
-      name = "global-vpc"
+      name = "dev-vpc"
     }
   }
 }
 
 module "dev_openvpn" {
-  source             = "./../../modules/openvpn"
+  source             = "./../../../modules/openvpn"
   environment        = "dev"
   key_prefix         = "sps"
   subnet_id          = data.terraform_remote_state.vpc.outputs.public_subnet_ids[0]
