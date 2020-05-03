@@ -1,5 +1,5 @@
-variable "app_name" {
-  description = "Application name for naming prefix"
+variable "region" {
+  description = "Region for RDS instance"
 }
 
 variable "environment" {

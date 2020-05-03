@@ -1,5 +1,5 @@
 locals {
-  rds_identifer = "${var.app_name}-${var.environment}"
+  rds_identifer = "${var.environment}-rds-${var.region}"
 }
 
 module "rds" {
@@ -29,7 +29,6 @@ module "rds" {
   iam_database_authentication_enabled = var.iam_database_authentication_enabled
 
   tags = {
-    App         = var.app_name
     Environment = var.environment
   }
 
