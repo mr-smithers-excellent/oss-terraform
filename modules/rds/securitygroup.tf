@@ -3,12 +3,12 @@
 ##########################
 
 locals {
-  sg_name = "rds-${var.app_name}-${var.environment}"
+  sg_name = "rds-${var.environment}"
 }
 
 resource "aws_security_group" "rds" {
   name        = local.sg_name
-  description = "RDS ${title(var.app_name)} ${title(var.environment)}"
+  description = "RDS ${title(var.environment)}"
   vpc_id      = var.vpc_id
 
   tags = {
