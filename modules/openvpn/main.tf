@@ -28,12 +28,12 @@ resource "aws_instance" "openvpn" {
 //provider "cloudflare" {
 //  version = "~> 2.0"
 //}
-//
-//resource "cloudflare_record" "openvpn" {
-//  count   = var.cloudflare_zone_id != "" ? 1 : 0
-//  name    = "${var.environment}-vpn"
-//  type    = "A"
-//  value   = aws_instance.openvpn.public_ip
-//  ttl     = 300
-//  zone_id = var.cloudflare_zone_id
-//}
+
+resource "cloudflare_record" "openvpn" {
+  count   = var.cloudflare_zone_id != "" ? 1 : 0
+  name    = "${var.environment}-vpn"
+  type    = "A"
+  value   = aws_instance.openvpn.public_ip
+  ttl     = 300
+  zone_id = var.cloudflare_zone_id
+}
