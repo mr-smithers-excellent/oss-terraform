@@ -1,6 +1,6 @@
 module "es" {
   source                         = "git::https://github.com/terraform-community-modules/tf_aws_elasticsearch.git?ref=v1.3.0"
-  domain_name                    = "${var.app_name}-${var.environment}"
+  domain_name                    = "${var.environment}-domain"
   instance_count                 = var.instance_count
   instance_type                  = var.instance_class
   es_version                     = var.es_version

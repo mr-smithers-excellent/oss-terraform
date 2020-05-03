@@ -1,7 +1,3 @@
-variable "app_name" {
-  description = "Application name for naming prefix"
-}
-
 variable "environment" {
   description = "dev, staging, prod, etc"
 }

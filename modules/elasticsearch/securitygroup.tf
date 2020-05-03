@@ -3,12 +3,12 @@
 ##########################
 
 locals {
-  sg_name = "es-${var.app_name}-${var.environment}"
+  sg_name = "es-${var.environment}"
 }
 
 resource "aws_security_group" "es" {
   name        = local.sg_name
-  description = "Elasticsearch ${title(var.app_name)} ${title(var.environment)}"
+  description = "Elasticsearch ${title(var.environment)}"
   vpc_id      = var.vpc_id
 
   tags = {
