@@ -29,5 +29,4 @@ variable "subnet_id" {
 
 variable "cloudflare_zone_id" {
   description = "Cloudflare Zone ID for DNS entry"
-  default     = ""
 }

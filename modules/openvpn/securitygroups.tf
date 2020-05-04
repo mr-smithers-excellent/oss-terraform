@@ -8,7 +8,7 @@ locals {
 
 resource "aws_security_group" "openvpn" {
   name        = local.sg_name
-  description = "Allows traffic into/out of OpenVPN"
+  description = "OpenVPN ${title(var.environment)}"
   vpc_id      = var.vpc_id
 
   tags = {
