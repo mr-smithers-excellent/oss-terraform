@@ -75,8 +75,8 @@ variable "deletion_protection" {
   default = false
 }
 
-variable "private_zone_id" {
-  description = "Private Route53 zone for DNS entry"
+variable "route53_zone_id" {
+  description = "Route53 zone for DNS entry"
 }
 
 variable "rds_dns_name" {

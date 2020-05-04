@@ -3,7 +3,7 @@
 #######################
 
 data "aws_route53_zone" "selected" {
-  zone_id = var.private_zone_id
+  zone_id = var.route53_zone_id
 }
 
 resource "aws_route53_record" "rds" {
